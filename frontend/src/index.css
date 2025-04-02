@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.qr-container {
+  padding: 15px;
+  background: white;
+  display: inline-block;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demo-pass {
+  width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.demo-pass h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.scanner-container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.dashboard-card {
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+/* QR Scanner Styles */
+#qr-reader {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#qr-reader video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#qr-reader :nth-child(2) {
+  display: none;
+}
+
+#qr-reader__scan_region {
+  position: relative;
+  min-height: 300px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#qr-reader__scan_region img {
+  display: none;
+}
+
+#qr-reader__dashboard {
+  padding: 10px;
+}
+
+#qr-reader__dashboard_section_swaplink {
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 0;
+  display: inline-block;
+}
+
+#qr-reader__dashboard button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.qr-scanner-box {
+  position: relative;
+}
+
+/* Animations for scanning effect */
+.scanner-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 123, 255, 0.5);
+  animation: scan 2s infinite;
+}
+
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  font-size: 14px;
+  min-height: 40px;
+  padding: 8px 16px;
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* Add these new styles */
+.table-container {
+  overflow-x: auto;
+}
+
+.custom-table {
+  min-width: auto; /* Remove fixed width */
+}
+
+.demo-dates-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%; /* Limit width */
+}
+
+.date-badge {
+  white-space: nowrap;
+  font-size: 0.85rem; /* Make badges slightly smaller */
+}
+
+.actions-container {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.25rem 0.5rem; /* Smaller padding */
+  font-size: 0.85rem; /* Smaller font */
+}
+
+.action-link {
+  text-decoration: none;
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .demo-dates-container {
+    flex-direction: row;
+  }
+  
+  .actions-container {
+    flex-direction: row;
+  }
+}
+
+/* Mobile and tablet styles */
+@media (max-width: 768px) {
+  .demo-dates-container {
+    flex-direction: column;
+  }
+  
+  .actions-container {
+    flex-direction: column;
+  }
+  
+  .action-btn, .action-link {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+}
